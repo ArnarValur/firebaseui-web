@@ -13,8 +13,8 @@
     "deploy": "pnpm run build && firebase deploy --only hosting:fir-ui-rework-nextjs-ssg"
   },
   "dependencies": {
-    "@firebase-oss/ui-react": "workspace:*",
     "@firebase-oss/ui-core": "workspace:*",
+    "@firebase-oss/ui-react": "workspace:*",
     "@firebase-oss/ui-styles": "workspace:*",
     "@firebase-oss/ui-translations": "workspace:*",
     "firebase": "catalog:",
@@ -24,13 +24,13 @@
     "server-only": "^0.0.1"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.0.6",
-    "@types/node": "^20",
+    "@tailwindcss/postcss": "^4.1.17",
+    "@types/node": "^20.19.25",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
-    "postcss": "^8.5.2",
+    "postcss": "^8.5.6",
     "postcss-load-config": "^6.0.1",
-    "tailwindcss": "^4.0.6",
+    "tailwindcss": "^4.1.17",
     "typescript": "catalog:"
   }
 }

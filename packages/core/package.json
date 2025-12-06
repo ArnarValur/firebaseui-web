@@ -52,7 +52,7 @@
   },
   "dependencies": {
     "@firebase-oss/ui-translations": "workspace:*",
-    "libphonenumber-js": "^1.12.23",
+    "libphonenumber-js": "^1.12.31",
     "nanostores": "catalog:",
     "qrcode-generator": "^2.0.4",
     "zod": "catalog:"

@@ -48,15 +48,15 @@
     "@firebase-oss/ui-core": "workspace:*",
     "@firebase-oss/ui-styles": "workspace:*",
     "@nanostores/vue": "^0.10.0",
-    "@tanstack/vue-form": "^1.23.1",
+    "@tanstack/vue-form": "^1.27.1",
     "clsx": "^2.1.1",
-    "tailwind-merge": "^3.0.1",
+    "tailwind-merge": "^3.4.0",
     "zod": "catalog:"
   },
   "devDependencies": {
     "@firebase-oss/ui-translations": "workspace:*",
     "@types/node": "catalog:",
-    "@vitejs/plugin-vue": "^6.0.0",
+    "@vitejs/plugin-vue": "^6.0.2",
     "@vue/test-utils": "^2.4.6",
     "firebase": "catalog:",
     "happy-dom": "^20.0.11",
@@ -66,6 +66,6 @@
     "typescript": "catalog:",
     "vite": "catalog:",
     "vitest": "catalog:",
-    "vue": "^3.5.13"
+    "vue": "^3.5.25"
   }
 }

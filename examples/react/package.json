@@ -11,27 +11,27 @@
     "deploy": "pnpm run build && firebase deploy --only hosting:fir-ui-rework"
   },
   "dependencies": {
-    "@firebase-oss/ui-react": "workspace:*",
     "@firebase-oss/ui-core": "workspace:*",
+    "@firebase-oss/ui-react": "workspace:*",
     "@firebase-oss/ui-styles": "workspace:*",
     "@firebase-oss/ui-translations": "workspace:*",
-    "firebase": "^11.6.0",
+    "firebase": "^11.10.0",
     "react": "catalog:",
     "react-dom": "catalog:",
-    "react-router": "^7.5.1"
+    "react-router": "^7.10.1"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.4",
-    "@eslint/js": "^9.22.0",
+    "@eslint/js": "^9.39.1",
+    "@tailwindcss/vite": "^4.1.17",
     "@types/react": "catalog:",
     "@types/react-dom": "catalog:",
     "@vitejs/plugin-react": "catalog:",
-    "eslint": "^9.22.0",
+    "eslint": "^9.39.1",
     "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.19",
-    "globals": "^16.0.0",
-    "prettier": "^3.1.1",
-    "vite": "catalog:",
-    "tailwindcss": "catalog:"
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "prettier": "^3.7.4",
+    "tailwindcss": "catalog:",
+    "vite": "catalog:"
   }
 }
