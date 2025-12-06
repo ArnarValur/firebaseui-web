@@ -28,8 +28,4 @@ export default defineConfig({
       "@firebase-oss/ui-styles": path.resolve(__dirname, "../styles/src/index.ts"),
     },
   },
-  test: {
-    globals: true,
-    environment: "happy-dom",
-  },
 });
