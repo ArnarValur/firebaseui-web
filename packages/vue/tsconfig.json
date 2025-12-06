@@ -1,0 +1,16 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "moduleResolution": "Bundler",
+    "paths": {
+      "~/*": ["./src/*"],
+      "~/tests/*": ["./tests/*"],
+      "@firebase-oss/ui-core": ["../core/src/index.ts"],
+      "@firebase-oss/ui-translations": ["../translations/src/index.ts"],
+      "@firebase-oss/ui-styles": ["../styles/src/index.ts"]
+    }
+  },
+  "include": ["src", "tests", "vite.config.ts", "setup-test.ts"]
+}

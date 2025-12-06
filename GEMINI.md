@@ -22,6 +22,7 @@ The project structure is setup in a way which provides a framework agnostic set 
 Additionally, framework specific packages depend on these agnostic packages to offer full integration with the frameworks:
 
 - `react`: Exposes React UI components (in the form of screens, full page components, or forms, the bare-bones UI forms) & hooks, enabling users to easily build their own UIs or consume the built in ones.
+- `vue`: Exposes Vue 3 UI components (in the form of screens, full page components, or forms, the bare-bones UI forms) & composables, enabling users to easily build their own UIs or consume the built in ones. Fully compatible with Nuxt 4.
 - `angular`: Exposes Angular UI components (in the form of screens, full page components, or forms, the bare-bones UI forms) & DI functionality, enabling users to easily build their own UIs or consume the built in ones. This package depends directly on AngularFire.
 
 The dependency graph is:
@@ -30,9 +31,11 @@ The dependency graph is:
 graph TD
   core --> translations;
   react --> core;
+  vue --> core;
   angular --> core;
   angular --> styles;
   react --> styles;
+  vue --> styles;
   shadcn --> react;
 ```
 
@@ -45,5 +48,6 @@ graph TD
 
 - `core`: @./packages/core/GEMINI.md
 - `react`: @./packages/react/GEMINI.md
+- `vue`: @./packages/vue/GEMINI.md
 - `styles`: @./packages/styles/GEMINI.md
 - `translations`: @./packages/translations/GEMINI.md

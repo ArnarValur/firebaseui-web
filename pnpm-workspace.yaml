@@ -46,6 +46,7 @@ catalogs:
     firebase: ^11 || ^12
     react: ^19
     react-dom: ^19
+    vue: ^3.5.0
 
 onlyBuiltDependencies:
   - "@parcel/watcher"

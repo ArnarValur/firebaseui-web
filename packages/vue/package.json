@@ -1,0 +1,71 @@
+{
+  "name": "@firebase-oss/ui-vue",
+  "version": "0.0.2",
+  "description": "Vue 3 and Nuxt 4 components for Firebase UI",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./components/*": "./src/components/*.vue"
+  },
+  "files": [
+    "dist",
+    "src/components"
+  ],
+  "scripts": {
+    "prepare": "pnpm run build",
+    "build": "tsup --env.PROD=true",
+    "build:with-logos": "tsup --env.PROD=true && pnpm run build:logos",
+    "build:local": "pnpm run build && pnpm pack",
+    "build:logos": "pnpm dlx @svgr/cli --icon --typescript --no-index --template vue --out-dir src/components/logos ../core/brands",
+    "dev": "tsup --watch",
+    "lint": "eslint . --ext .ts,.vue",
+    "lint:fix": "eslint . --ext .ts,.vue --fix",
+    "format": "prettier --write \"src/**/*.{ts,vue}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,vue}\"",
+    "clean": "rimraf dist",
+    "test": "vitest run",
+    "test:unit": "vitest run tests/unit",
+    "test:unit:watch": "vitest tests/unit",
+    "test:integration": "vitest run tests/integration",
+    "test:integration:watch": "vitest tests/integration",
+    "version:bump": "pnpm version patch",
+    "publish:tags": "sh -c 'TAG=\"${npm_package_name}@${npm_package_version}\"; git tag --list \"$TAG\" | grep . || git tag \"$TAG\"; git push origin \"$TAG\"'",
+    "publish:npm": "../../publish.sh",
+    "release": "pnpm run build && pnpm pack --pack-destination --pack-destination ../../releases/"
+  },
+  "peerDependencies": {
+    "firebase": "catalog:peerDependencies",
+    "vue": "^3.5.0"
+  },
+  "dependencies": {
+    "@firebase-oss/ui-core": "workspace:*",
+    "@firebase-oss/ui-styles": "workspace:*",
+    "@nanostores/vue": "^0.10.0",
+    "@tanstack/vue-form": "^1.23.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^3.0.1",
+    "zod": "catalog:"
+  },
+  "devDependencies": {
+    "@firebase-oss/ui-translations": "workspace:*",
+    "@types/node": "catalog:",
+    "@vitejs/plugin-vue": "^6.0.0",
+    "@vue/test-utils": "^2.4.6",
+    "firebase": "catalog:",
+    "happy-dom": "^20.0.11",
+    "nanostores": "catalog:",
+    "rimraf": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:",
+    "vite": "catalog:",
+    "vitest": "catalog:",
+    "vue": "^3.5.13"
+  }
+}
