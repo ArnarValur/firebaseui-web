@@ -15,7 +15,6 @@
  */
 
 import { defineConfig } from "tsup";
-import vue from "@vitejs/plugin-vue";
 
 export default defineConfig({
   entry: ["src/index.ts"],
@@ -24,14 +23,5 @@ export default defineConfig({
   clean: true,
   sourcemap: true,
   external: ["vue", "firebase", "@firebase-oss/ui-core", "@firebase-oss/ui-styles"],
-  esbuildPlugins: [
-    {
-      name: "vue",
-      setup(build) {
-        // Handle .vue files by marking them as external or using a custom loader
-        // For now, we'll compile Vue SFCs separately if needed
-      },
-    },
-  ],
   treeshake: true,
 });

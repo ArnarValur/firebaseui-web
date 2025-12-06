@@ -15,7 +15,6 @@
  */
 
 import { computed, ref, type Ref } from "vue";
-import type { RecaptchaVerifier } from "firebase/auth";
 import {
   createEmailLinkAuthFormSchema,
   createForgotPasswordAuthFormSchema,
@@ -162,13 +161,10 @@ export function useRequireDisplayName() {
 /**
  * Composable to create and manage a reCAPTCHA verifier
  *
- * @param _elementRef - Reference to the DOM element where reCAPTCHA should be rendered
  * @returns A ref to the RecaptchaVerifier instance or null
  */
-export function useRecaptchaVerifier(
-  _elementRef: Ref<HTMLDivElement | null>
-): Ref<any | null> {
-  const verifier = ref<any | null>(null);
+export function useRecaptchaVerifier(): Ref<unknown | null> {
+  const verifier = ref<unknown | null>(null);
 
   // This is a simplified version - actual implementation would need
   // to properly initialize the reCAPTCHA verifier when the element is available

@@ -22,4 +22,3 @@ export type { default as CardTitle } from "./CardTitle.vue";
 export type { default as CardSubtitle } from "./CardSubtitle.vue";
 export type { default as CardContent } from "./CardContent.vue";
 export type { default as Divider } from "./Divider.vue";
-

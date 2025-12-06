@@ -15,7 +15,7 @@
  */
 
 import type { App, InjectionKey } from "vue";
-import { inject, provide } from "vue";
+import { inject } from "vue";
 import type { FirebaseUIStore, FirebaseUI } from "@firebase-oss/ui-core";
 import { useStore } from "@nanostores/vue";
 

@@ -44,4 +44,3 @@ vi.mock("firebase/auth", async () => {
     createUserWithEmailAndPassword: vi.fn(),
   };
 });
-

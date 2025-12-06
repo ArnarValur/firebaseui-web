@@ -4,7 +4,7 @@
 
 Firebase UI for Web brings out-of-the-box components for Firebase for your favourite frameworks:
 
-- Support for [React](https://react.dev/), [Shadcn](https://ui.shadcn.com/) and [Angular](https://angular.dev/).
+- Support for [React](https://react.dev/), [Vue](https://vuejs.org/), [Shadcn](https://ui.shadcn.com/) and [Angular](https://angular.dev/).
 - Composable authentication components; Email/Password Sign Up/In, Forgot Password, Email Link, Phone Auth, OAuth, Multi-Factor and more.
 - Configure the behavior of internal logic and UI via behaviors.
 - Framework agnostic core package; bring your own UI.
@@ -41,7 +41,7 @@ import { initializeApp } from 'firebase/app';
 const app = initializeApp({ ... });
 ```
 
-Next, follow the framework specific installation steps, for either React, Shadcn or Angular:
+Next, follow the framework specific installation steps, for either React, Vue, Shadcn or Angular:
 
 <details>
   <summary>React</summary>
@@ -103,6 +103,102 @@ Next, follow the framework specific installation steps, for either React, Shadcn
   ```
 
   View the [reference API](#reference) for a full list of components.
+</details>
+
+<details>
+  <summary>Vue (Vue 3 / Nuxt 4)</summary>
+
+  Install the `@firebase-oss/ui-vue` package:
+
+  ```bash
+  npm install @firebase-oss/ui-vue@beta
+  ```
+
+  Alongside your Firebase configuration, import the `initializeUI` function and pass your configured Firebase App instance:
+
+  ```ts
+  import { initializeApp } from 'firebase/app';
+  import { initializeUI } from '@firebase-oss/ui-core';
+
+  const app = initializeApp({ ... });
+
+  const ui = initializeUI({
+    app,
+  });
+  ```
+
+  **For Vue 3:**
+
+  Install the FirebaseUI plugin in your Vue app:
+
+  ```ts
+  import { createApp } from 'vue';
+  import { FirebaseUIPlugin } from '@firebase-oss/ui-vue';
+  import App from './App.vue';
+
+  createApp(App)
+    .use(FirebaseUIPlugin, { ui })
+    .mount('#app');
+  ```
+
+  **For Nuxt 4:**
+
+  Create a plugin file (`plugins/firebase-ui.ts`):
+
+  ```ts
+  import { defineNuxtPlugin } from '#app';
+  import { FirebaseUIPlugin } from '@firebase-oss/ui-vue';
+
+  export default defineNuxtPlugin((nuxtApp) => {
+    nuxtApp.vueApp.use(FirebaseUIPlugin, { ui });
+  });
+  ```
+
+  Ensure your application includes the bundled styles for Firebase UI (see [styling](#styling) for additional info).
+
+  **For Vue 3:**
+
+  ```ts
+  // In your main.ts
+  import '@firebase-oss/ui-styles/dist.min.css';
+  // Or for tailwind users
+  import '@firebase-oss/ui-styles/tailwind';
+  ```
+
+  **For Nuxt 4:**
+
+  ```ts
+  // In nuxt.config.ts
+  export default defineNuxtConfig({
+    css: ['@firebase-oss/ui-styles/dist.min.css'],
+  });
+  ```
+
+  That's it 🎉 You can now use composables to build your authentication UI:
+
+  ```vue
+  <template>
+    <div>
+      <header>Welcome</header>
+      <button @click="handleSignIn" :disabled="ui.state === 'pending'">
+        {{ ui.state === 'pending' ? 'Signing in...' : 'Sign In' }}
+      </button>
+    </div>
+  </template>
+
+  <script setup>
+  import { useFirebaseUI } from '@firebase-oss/ui-vue';
+  import { signInWithEmailAndPassword } from '@firebase-oss/ui-core';
+
+  const ui = useFirebaseUI();
+
+  async function handleSignIn() {
+    await signInWithEmailAndPassword(ui, 'user@example.com', 'password');
+  }
+  </script>
+  ```
+
+  View the [reference API](#reference) for a full list of composables and components.
 </details>
 
 <details>
