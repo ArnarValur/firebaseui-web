@@ -1,0 +1,24 @@
+{
+  "name": "vue-test",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@firebase-oss/ui-core": "workspace:*",
+    "@firebase-oss/ui-vue": "workspace:*",
+    "@firebase-oss/ui-styles": "workspace:*",
+    "firebase": "^11.10.0",
+    "vue": "^3.5.25"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^6.0.2",
+    "@tailwindcss/vite": "^4.1.17",
+    "tailwindcss": "catalog:",
+    "vite": "catalog:"
+  }
+}
